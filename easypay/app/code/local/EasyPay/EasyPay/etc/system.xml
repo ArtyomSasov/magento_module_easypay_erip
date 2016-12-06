@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<config>
+	<sections>
+		<payment>
+			<groups>
+				<easypay_redirect translate="label" module="easypay">
+					<label>EasyPay</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>1</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+
+					<fields translate="label">
+						<active translate="label">
+							<label>Включено</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>2</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>0</show_in_store>
+						</active>
+						<title translate="label">
+							<label>Title</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>3</sort_order>
+							<show_in_default>0</show_in_default>
+							<show_in_website>0</show_in_website>
+							<show_in_store>0</show_in_store>
+							<comment>Покупатель видит этот заголовок на этапе оформления заказа, а так же в личном кабинете</comment>
+						</title>   
+						<expires_easypay translate="label">
+							<label>Время действительности счета в днях</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>4</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>0</show_in_store>
+							<comment>Число от 1 до 30, если период задан в днях или от 600 до 3600*24, если период задан в секундах</comment>
+						</expires_easypay>
+						<easypay_shop_id translate="label">
+							<label>Номер поставщика</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>5</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>0</show_in_store>
+							<comment>Выдается Администратором при подключении к EasyPay</comment>
+						</easypay_shop_id> 
+						<web_key_easypay translate="label">
+							<label>Ключ для авторизации счетов</label>
+							<frontend_type>text</frontend_type><!--obscure-->
+							<sort_order>6</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>0</show_in_store>
+							<comment>Web_key (выдается Администратором при подключении к EasyPay)</comment>
+						</web_key_easypay>
+
+						 <debug_easypay translate="label">
+							<label>Режим отладки</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>7</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>0</show_in_store>
+							<comment>
+							В этом случае отображаются все переданные поля, в том числе и скрытые с комментариями и сообщениями об ошибке (в случае неверного формирования запроса). Выписка счетов и оплата в отладочном режиме при этом осуществляется реальная.</comment>
+						</debug_easypay>
+						<allowspecific translate="label">
+                            <label>Оплата из доступных стран</label>
+                            <frontend_type>allowspecific</frontend_type>
+                            <sort_order>8</sort_order>
+                            <source_model>adminhtml/system_config_source_payment_allspecificcountries</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </allowspecific>
+                        <specificcountry translate="label">
+                            <label>Оплата из выбранных стран</label>
+                            <frontend_type>multiselect</frontend_type>
+                            <sort_order>9</sort_order>
+                            <source_model>adminhtml/system_config_source_country</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </specificcountry>
+					</fields>
+				</easypay_redirect>
+			</groups>
+		</payment>
+	</sections>
+</config>
